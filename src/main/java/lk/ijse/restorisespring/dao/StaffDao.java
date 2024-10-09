@@ -1,4 +1,7 @@
 package lk.ijse.restorisespring.dao;
 
-public interface StaffDao {
+import lk.ijse.restorisespring.entity.impl.StaffEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface StaffDao  extends JpaRepository<StaffEntity,String> {
 }

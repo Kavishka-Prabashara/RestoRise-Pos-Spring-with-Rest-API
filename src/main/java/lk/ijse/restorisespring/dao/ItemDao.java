@@ -1,4 +1,7 @@
 package lk.ijse.restorisespring.dao;
 
-public interface ItemDao {
+import lk.ijse.restorisespring.entity.impl.ItemEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ItemDao  extends JpaRepository<ItemEntity,String> {
 }
