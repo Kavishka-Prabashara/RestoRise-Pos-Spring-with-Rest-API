@@ -20,5 +20,5 @@ public class StaffEntity implements SuperEntity {
     private String staffName;
 
     @Column(name = "staff_mobile_no", nullable = false)
-    private String staffMobileNo;
+    private int staffMobileNo;
 }
