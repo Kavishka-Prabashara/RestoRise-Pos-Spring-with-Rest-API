@@ -1,5 +1,6 @@
 package lk.ijse.restorisespring.dto;
 
-public interface SuperDTO
-{
+import java.io.Serializable;
+
+public interface SuperDTO extends Serializable {
 }

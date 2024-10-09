@@ -1,4 +1,17 @@
 package lk.ijse.restorisespring.dto.impl;
 
-public class OrderDTO {
+import lk.ijse.restorisespring.dto.OrderStatus;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+public class OrderDTO implements OrderStatus {
+
+    private String orderId;
+    private int orderQTY;
+
+
 }
