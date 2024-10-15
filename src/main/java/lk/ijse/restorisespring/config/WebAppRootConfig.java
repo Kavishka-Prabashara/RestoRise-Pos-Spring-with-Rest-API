@@ -16,40 +16,44 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.sql.DataSource;
 
 @Configuration
+@EnableTransactionManagement
 @ComponentScan(basePackages = "lk.ijse.restorisespring")
 @EnableJpaRepositories(basePackages = "lk.ijse.restorisespring.dao")
-@EnableTransactionManagement
 public class WebAppRootConfig {
+    @Bean
+    public DataSource dataSource() {
 
-        @Bean
-        public ModelMapper modelMapper() {
-            return new ModelMapper();
-        }
-        @Bean
-        public DataSource dataSource() {
-            var dmds = new DriverManagerDataSource();
-            dmds.setDriverClassName("com.mysql.cj.jdbc.Driver");
-            dmds.setUrl("jdbc:mysql://localhost:3306/restorise?createDatabaseIfNotExist=true");
-            dmds.setUsername("root");
-            dmds.setPassword("Ijse@1234");
-            return dmds;
-        }
-        @Bean
-        public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
-            HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
-            vendorAdapter.setGenerateDdl(true);
-            LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
-            factory.setJpaVendorAdapter(vendorAdapter);
-            factory.setPackagesToScan("lk.ijse.restorisespring.entity.impl");
-            factory.setDataSource(dataSource());
-            return factory;
-        }
-        @Bean
-        public PlatformTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
-            JpaTransactionManager txManager = new JpaTransactionManager();
-            txManager.setEntityManagerFactory(entityManagerFactory);
-            return txManager;
-        }
+        var dmds = new DriverManagerDataSource();
+        dmds.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        dmds.setUrl("jdbc:mysql://localhost:3306/restorise?createDatabaseIfNotExist=true");
+        dmds.setUsername("root");
+        dmds.setPassword("Ijse@1234");
+        return dmds;
     }
 
+    @Bean
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
 
+        HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
+        vendorAdapter.setGenerateDdl(true);
+
+        LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
+        factory.setJpaVendorAdapter(vendorAdapter);
+        factory.setPackagesToScan("lk.ijse.restorisespring.entity.impl");
+        factory.setDataSource(dataSource());
+        return factory;
+    }
+
+    @Bean
+    public PlatformTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
+
+        JpaTransactionManager txManager = new JpaTransactionManager();
+        txManager.setEntityManagerFactory(entityManagerFactory);
+        return txManager;
+    }
+
+    @Bean
+    public ModelMapper modelMapper() {
+        return new ModelMapper();
+    }
+}

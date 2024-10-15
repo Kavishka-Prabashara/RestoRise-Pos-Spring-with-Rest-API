@@ -1,3 +1,4 @@
+/*
 package lk.ijse.restorisespring.service;
 
 import lk.ijse.restorisespring.dto.OrderStatus;
@@ -12,3 +13,4 @@ public interface OrderService {
     List<OrderDTO> getAllOrder();
     OrderStatus getOrder(String orderId);
 }
+*/

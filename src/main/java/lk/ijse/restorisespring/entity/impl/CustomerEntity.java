@@ -1,3 +1,4 @@
+/*
 package lk.ijse.restorisespring.entity.impl;
 
 import jakarta.persistence.*;
@@ -22,3 +23,4 @@ public class CustomerEntity implements SuperEntity {
     @Column(name = "customer_email", nullable = false)
     private String customerEmail;
 }
+*/

@@ -1,3 +1,4 @@
+/*
 package lk.ijse.restorisespring.entity.impl;
 
 import jakarta.persistence.*;
@@ -27,3 +28,4 @@ public class ItemEntity implements SuperEntity {
     @Column(name = "item_stock", nullable = false)
     private int itemStock;
 }
+*/

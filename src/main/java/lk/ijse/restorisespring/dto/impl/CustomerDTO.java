@@ -1,3 +1,4 @@
+/*
 package lk.ijse.restorisespring.dto.impl;
 
 import lk.ijse.restorisespring.dto.CustomerStatus;
@@ -15,3 +16,4 @@ public class CustomerDTO implements CustomerStatus {
     private String customerEmail;
 
 }
+*/

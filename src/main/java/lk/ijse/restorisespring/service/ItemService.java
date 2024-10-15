@@ -1,3 +1,4 @@
+/*
 package lk.ijse.restorisespring.service;
 
 import lk.ijse.restorisespring.dto.ItemStatus;
@@ -12,3 +13,4 @@ public interface ItemService {
     List<ItemDTO> getAllItems();
     ItemStatus getItem(String itemId);
 }
+*/

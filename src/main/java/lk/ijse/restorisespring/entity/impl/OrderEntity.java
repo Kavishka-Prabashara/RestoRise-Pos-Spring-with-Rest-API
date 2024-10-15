@@ -1,3 +1,4 @@
+/*
 package lk.ijse.restorisespring.entity.impl;
 
 import jakarta.persistence.*;
@@ -30,3 +31,4 @@ public class OrderEntity implements SuperEntity {
     private CustomerEntity customer;  // Foreign Key to CustomerEntity
 
 }
+*/

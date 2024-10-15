@@ -1,3 +1,4 @@
+/*
 package lk.ijse.restorisespring.dto.impl;
 
 import lk.ijse.restorisespring.dto.ItemStatus;
@@ -17,3 +18,4 @@ public class ItemDTO implements ItemStatus {
     private int itemStock;
 
 }
+*/
